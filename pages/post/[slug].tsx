@@ -43,11 +43,19 @@ const Post: React.FC<{ post: Post }> = props => {
     return <h1>Loading...</h1>
   }
 
+  function loadComments() {
+    console.log('from discus')
+  }
+
   return (
     <div className={styles.container}>
       <Link href='/'><a>Go Back</a></Link>
       <h1>{post.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+
+      <p className={styles.goback} onClick={loadComments}>
+        Load Comments
+      </p>
     </div>
   )
 }
